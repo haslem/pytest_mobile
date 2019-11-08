@@ -1,4 +1,4 @@
-from appium import webdriver
+
 import locators_mobile
 from appium.webdriver.common.touch_action import TouchAction
 

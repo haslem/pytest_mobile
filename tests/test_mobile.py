@@ -7,6 +7,7 @@ import locators_mobile
 from appium.webdriver.common.touch_action import TouchAction
 
 from screens.main_screen import MainScreen
+from screens.menu_screen import MenuScreen
 
 
 @pytest.fixture(scope='session')
@@ -41,8 +42,13 @@ def test_menu_button(mobile):
 	main_screen.menu_click()
 
 
-	elements = mobile.find_elements_by_class_name('android.widget.Button')
-	for i in elements:
-		if i.get_attribute('text') == 'Offline maps':
-			i.click()
-			break
+
+
+	menu_screen = MenuScreen(mobile)
+	menu_screen.offline_maps()
+
+	# elements = mobile.find_elements_by_class_name('android.widget.Button')
+	# for i in elements:
+	# 	if i.get_attribute('text') == 'Offline maps':
+	# 		i.click()
+	# 		break
